@@ -5,7 +5,7 @@ const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
 
-const INITIAL_COLOR = "#2c2c2c"
+const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 700;
 
 canvas.width = CANVAS_SIZE;
@@ -40,43 +40,43 @@ function onMouseMove(event) {
   }
 }
 
-function handleColorClick(event){
-    const color = event.target.style.backgroundColor;
-    ctx.strokeStyle = color;
-    ctx.fillStyle = color;
+function handleColorClick(event) {
+  const color = event.target.style.backgroundColor;
+  ctx.strokeStyle = color;
+  ctx.fillStyle = color;
 }
 
-function handleRangeChange(event){
-    const size = event.target.value;
-    ctx.lineWidth = size;
+function handleRangeChange(event) {
+  const size = event.target.value;
+  ctx.lineWidth = size;
 }
 
-function handleMoveClick(event){
-    if(filling == true){
-        filling = false;
-        mode.innerText = "Fill";
-    } else {
-        filling = true;
-        mode.innerText = "PAINT";
-    }
+function handleMoveClick(event) {
+  if (filling == true) {
+    filling = false;
+    mode.innerText = "Fill";
+  } else {
+    filling = true;
+    mode.innerText = "PAINT";
+  }
 }
 
-function handleCanvasClick(){
-    if(filling) {
-        ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-    }
+function handleCanvasClick() {
+  if (filling) {
+    ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+  }
 }
 
-function handleCM(event){
-    event.preventDefault();
+function handleCM(event) {
+  event.preventDefault();
 }
 
 function handleSaveClick() {
-    const image = canvas.toDataURL();
-    const link = document.createElement("a");
-    link.href = image;
-    link.download = "PaintJS[🎨]";
-    link.click();
+  const image = canvas.toDataURL();
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = "PaintJS[🎨]";
+  link.click();
 }
 
 if (canvas) {
@@ -88,16 +88,18 @@ if (canvas) {
   canvas.addEventListener("contextmenu", handleCM);
 }
 
-Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
+Array.from(colors).forEach((color) =>
+  color.addEventListener("click", handleColorClick)
+);
 
-if(range){
-    range.addEventListener("input", handleRangeChange);
+if (range) {
+  range.addEventListener("input", handleRangeChange);
 }
 
-if(mode){
-    mode.addEventListener("click", handleMoveClick);
+if (mode) {
+  mode.addEventListener("click", handleMoveClick);
 }
 
-if(saveBtn){
-    saveBtn.addEventListener("click", handleSaveClick);
+if (saveBtn) {
+  saveBtn.addEventListener("click", handleSaveClick);
 }

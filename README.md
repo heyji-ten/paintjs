@@ -13,3 +13,6 @@
 * HTML
 * CSS
 * JavaScript (VanillaJS)
+
+![paint Preview](https://user-images.githubusercontent.com/59608643/128633982-d31f4317-64b4-42ba-8e85-e4ccde14a34f.jpg)
+![paintpreview](https://user-images.githubusercontent.com/59608643/128633983-6495e790-0956-4bf9-a635-086d87a06bab.jpg)

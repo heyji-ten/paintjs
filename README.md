@@ -9,6 +9,8 @@
 4. 브러쉬 크기 변경
 5. 저장기능
 
+Canvas API 사용 
+
 ### Language  
 * HTML
 * CSS
